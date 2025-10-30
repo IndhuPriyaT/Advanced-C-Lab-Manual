@@ -41,7 +41,8 @@ int main()
 
 # Output:
 
-//paste your output here
+<img width="434" height="187" alt="image" src="https://github.com/user-attachments/assets/a352e6af-72dd-4bce-8b26-6e27a0b8e8bc" />
+
 
 # Result: 
 Thus, the program is verified successfully.
@@ -61,11 +62,35 @@ Print the result returned by the add function.
 Return 0
 # Program:
 
-//type your code here
+```
+#include <stdio.h>
+struct num 
+{
+    int a,b,sum;
+};
+struct num add(struct num x)
+{
+    struct num result;
+    result.a=x.a;
+    result.b=x.b;
+    result.sum=x.a+x.b;
+    return result;
+}
+int main()
+{
+    struct num ip,op;
+    scanf("%d",&ip.a);
+    scanf("%d",&ip.b);
+    op=add(ip);
+    printf("%d",op.sum);
+}
+
+```
 
 # Output:
 
-//paste your output here
+<img width="479" height="167" alt="image" src="https://github.com/user-attachments/assets/0cb6e1e2-5ce3-4b3b-a5fd-6f55cdff6a47" />
+
 
 # Result:
 Thus, the program is verified successfully
@@ -92,11 +117,30 @@ End the main function.
 Return 0 to indicate successful program execution.
 # Program:
 
-//type your code here
+```
+#include <stdio.h>
+int main()
+{
+    char filename[100];
+    FILE *fptr;
+    scanf("%s",filename);
+    printf("%s File Created Successfully\n",filename);
+    fptr=fopen(filename,"w");
+    printf("%s File Opened\n",filename);
+    if(fptr==NULL)
+     printf("Error");
+    else
+    {
+    fclose(fptr);
+    printf("%s File Closed",filename);
+    }
+}
+```
 
 # Output:
 
-//paste your output here
+<img width="1174" height="418" alt="image" src="https://github.com/user-attachments/assets/4c79cf04-e5f5-46d9-9a09-6fb9cd8c01ad" />
+
 
 # Result: 
 Thus, the program is verified successfully
@@ -122,11 +166,30 @@ End the main function.
 Return 0 to indicate successful program execution.
 # Program:
 
-//type your code here
+```
+#include <stdio.h>
+int main()
+{
+    char file[200],c[0];
+    int n;
+    FILE *fptr;
+    scanf("%s",file);
+    fptr=fopen(file,"w");
+    printf("%s Opened",file);
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%s",c);
+        fprintf(fptr,"%s",c);
+    }
+    printf("\nData added Successfully");
+}
+```
 
 # Output:
 
-//paste your output here
+<img width="710" height="389" alt="image" src="https://github.com/user-attachments/assets/09c92eb3-1e02-4c28-90e1-25e5cfe8ad47" />
+
 
 # Result:
 Thus, the program is verified successfully
@@ -165,11 +228,43 @@ The aim of this program is to dynamically allocate memory to store information a
 
 # Program:
 
-//type your code here
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Subject {
+    char name[50];
+    int marks;
+};
+
+int main() {
+    int n;
+    struct Subject *s;
+    printf("Enter the number of subjects: ");
+    scanf("%d", &n);
+    s = (struct Subject *)malloc(n * sizeof(struct Subject));
+    if (s == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1; 
+    }
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter name of subject %d: ", i + 1);
+        scanf("%s", s[i].name);
+
+        printf("Enter marks for %s: ", s[i].name);
+        scanf("%d", &s[i].marks);
+    }
+    for (int i = 0; i < n; i++) {
+        printf("Subject: %s\tMarks: %d\n", s[i].name, s[i].marks);
+    }
+    free(s);
+    return 0;
+}
+
+```
 
 # Output:
 
-//paste your output here
+<img width="413" height="412" alt="image" src="https://github.com/user-attachments/assets/09a3b95a-ea59-4806-b49f-f72978f8c480" />
 
 # Result: 
 Thus, the program is verified successfully
